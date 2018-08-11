@@ -1,126 +1,35 @@
 #include <iostream>
 
 #include "../header/GameRules.h"
-#include "../header/GameOfCounting.h"
 
-int IsTimes(const int Num)
-{
-	if(0 == Num%3)
-		 return 3;
-	if(0 == Num%5)
-		 return 5;
-	if(0 == Num%7)
-		 return 7;
-	return 1;
+#include "../header/Client.h"
 
-}
-string ConvertToString(const int InputNum, int times)
+void HandSetGame :: Run()
 {
-	string str;
-	if (1 != times)
-	{
-		if(3 == times)
-			str = "石头";
-		if(5 == times)
-			str = "剪刀";
-		if(7 == times)
-			str = "布";
-		return str;
-	}
-		str = std::to_string(InputNum);
-		return str;
+	WRITE_LINE("运行手机游戏...");
 }
 
-string  DoubelConvertToString(const int InputNum)
+void HandSetAddressList :: Run()
 {
-	string str;
-	if(1 != IsTimes(InputNum))
-	{
-		str = ConvertToString(InputNum, 3)+
-			ConvertToString(InputNum, 5)+
-			ConvertToString(InputNum, 7);
-	return str;
-	}
-	return std::to_string(InputNum);
+	WRITE_LINE("运行手机通讯录...");
 }
 
-string Game :: InputNum(int num)
+void HandSetBrand :: Run()
 {
-	N = num;
-	if(Istimes(3) || Istimes(5) || Istimes(7))
-	{
-		convertNumtoString();
-		return str;
-	}
-
-	if(IncludeTheNum(3) || IncludeTheNum(5) || IncludeTheNum(7))
-	{
-		convertNumtoString();
-		return str;
-	}
-	str = std::to_string(N);
-	return str;
+	_soft->Run();
 }
 
-bool Game ::Istimes(int times)
+void HandSetBrandM :: Run()
 {
-	if(0 == N%times)
-	{
-		return true;
-	}
+	WRITE_LINE("运行手机品牌M...");
 
-	return false;
+	HandSetBrand::Run();
 }
 
-bool Game :: IncludeTheNum(int num)
+void HandSetBrandN :: Run()
 {
-	if(num == N/10 || num == N%10)
-	{
-		return true;
-	}
-	return false;
+	WRITE_LINE("运行手机品牌N...");
+
+	HandSetBrand::Run();
 }
 
-void Game :: convertNumtoString()
-{
-	if(1 == SprintSwch)
-	{
-		str = "";
-		if(0 == N%3)
-		{
-			str = "石头";
-		}
-
-		if(0 == N%5)
-		{
-			str = str+"剪刀";
-		}
-
-		if(0 == N%7)
-		{
-			str = str+"布";
-		}
-		return;
-	}
-
-	if(2 == SprintSwch)
-	{
-		str = "";
-		if(IncludeTheNum(3))
-		{
-			str = "石头";
-		}
-
-		if(IncludeTheNum(5))
-		{
-			str = "剪刀";
-		}
-
-		if(IncludeTheNum(7))
-		{
-			str = "布";
-		}
-		return;
-	}
-
-}

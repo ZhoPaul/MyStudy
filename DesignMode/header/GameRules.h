@@ -1,53 +1,72 @@
 
 /* 定义游戏规则 */
 #include <iostream>
-#include <string>
-#include <gtest/gtest.h>
 
 using namespace std;
 
-/*class CONVERT_NUM_TO_STRING
-{
-public:*/
-	int IsTimes(const int Num);//返回是几的倍数
 
-
-	string ConvertToString(const int InputNum, int times);
-	string  DoubelConvertToString(const int InputNum);
-
-	bool ConvertToString(const int InputNum, int times, string str);
-	void DoubelConvertToString(const int InputNum, string str);
-	//string ConvertToString(const int InputNum, int times);
-	//string OutPutString(const int Num);
-//};
-
-
-class show
+//抽象类：手机软件类
+class HandSetSoft
 {
 public:
-	void showStartInfo()
-	{
-		cout<<"Begin Running Test!"<<endl;
-	}
+	virtual ~HandSetSoft(){};
 
-	void showEndInfo()
-	{
-		cout<<"Finished Running Test!"<<endl;
-	}
+	virtual void Run() = 0;
 };
 
-class Game
+//手机软件子类：手机游戏
+class HandSetGame : public HandSetSoft
 {
 public:
-	Game():str(""),N(0),SprintSwch(0){}
-	~Game(){}
-
-	string InputNum(int num);
-	void convertNumtoString();
-	bool Istimes(int times);
-	bool IncludeTheNum(int num);
-
-	string str;
-	int N;
-	int SprintSwch;
+	void Run();
 };
+
+//手机软件子类：手机游戏
+class HandSetAddressList : public HandSetSoft
+{
+public:
+	void Run();
+};
+
+
+//抽象类：手机品牌类
+class HandSetBrand
+{
+public:
+	virtual ~HandSetBrand(){};
+
+	//HandSetBrand(HandSetSoft *soft) : _soft(soft){};
+	void SetHandSetSoft(HandSetSoft *soft) { _soft = soft; };
+
+	virtual void Run();
+private:
+	HandSetSoft *_soft;
+};
+
+//手机品牌子类：手机品牌M
+class HandSetBrandM : public HandSetBrand
+{
+public:
+
+	void Run();
+};
+//手机品牌子类：手机品牌N
+class HandSetBrandN : public HandSetBrand
+{
+public:
+
+	void Run();
+};
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -4,19 +4,22 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
-../src/GameOfCounting.cpp \
+../src/Client.cpp \
 ../src/GameRules.cpp \
-../src/Test.cpp 
+../src/Main.cpp \
+../src/TestCase.cpp 
 
 OBJS += \
-./src/GameOfCounting.o \
+./src/Client.o \
 ./src/GameRules.o \
-./src/Test.o 
+./src/Main.o \
+./src/TestCase.o 
 
 CPP_DEPS += \
-./src/GameOfCounting.d \
+./src/Client.d \
 ./src/GameRules.d \
-./src/Test.d 
+./src/Main.d \
+./src/TestCase.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

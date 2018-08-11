@@ -11,9 +11,11 @@
 
 #ifndef FileName_H_
 #define FileName_H_
+
+
 #include "../header/GameRules.h"
-#include "../header/GameOfCounting.h"
-#include "../header/Test.h"
+#include "../header/Client.h"
+#include "../header/TestCase.h"
 
 #endif
 

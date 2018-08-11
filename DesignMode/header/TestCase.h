@@ -10,6 +10,9 @@
 
 #endif
 
+
+#define DEBUG_INFO(...) cout<< __VA_ARGS__ <<endl;
+
 using namespace std;
 
 class myTest:public ::testing::Test
@@ -20,14 +23,11 @@ public:
 protected:
 	virtual void SetUp()
 	{
-		cout<<"Begin Running Test!"<<endl;
+		cout<<"*********Begin Running Test!*********"<<endl;
 	}
 	virtual void TearDown()
 	{
-		cout<<"Finished Running Test!"<<endl;
+		cout<<"*********Finished Running Test!*********"<<endl;
 	}
 
-public:
-	int min1(int a,int b);
-	Game g1;
 };
